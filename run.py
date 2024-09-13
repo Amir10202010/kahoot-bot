@@ -1,6 +1,7 @@
 import asyncio
 from aiogram import Bot, Dispatcher
 
+from background import keep_alive
 from config import TOKEN
 from app.handlers import router
 
@@ -16,6 +17,7 @@ async def main():
 if __name__ == '__main__':
     try:
         print('Запуск Бота')
+        keep_alive()
         asyncio.run(main())
     except KeyboardInterrupt:
         print('Завершение Бота')
