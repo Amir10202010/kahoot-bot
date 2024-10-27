@@ -57,7 +57,7 @@ async def play_1(message: Message, state: FSMContext):
         if 1 <= count <= 50:
             await state.set_state(Test.play)
             wb = openpyxl.load_workbook('test.xlsx')
-            test = wb[f'Test-{count}']
+            test = wb[f'Test-2']
             all_rows = list(test.iter_rows(max_row = 49, values_only = True))
             try:
                 random_rows = random.sample(all_rows, questions_count[message.from_user.id] - 1)
